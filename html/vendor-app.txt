@@ -1,5 +1,28 @@
-1. Create Vendor
-2. Edit Vendor 
-3. Vendor List 
+DESCRIPTION:
+Vendors are the companies which are basically consultancies. These companies help the Software companies and the colleges get experts for their training requirements. Vendors can be devided basically into corporate vendors, college vendors and institutes.
+The corporate vendors help the IT companies get trainers for their trainings.
+The college vendors are also called CRT vendors who provide trainers for placement trainings at colleges.
+Third type of vendors are the training institutes.
 
-Vendor List 
+For business, Vendors are chosen depending on their rating which depends on:
+	1. How good they are at payments (Making payments on or before due date or will they delay or trouble the trainer)
+	2. professionalism (how good they are in operations, communication and quick to reply and lastly are they reliable and trust worthy)
+This rating or feedback about the vendor has to be stored in the table as a numeric value [1, 5] on a scale of 5.
+
+ACTORS: admin
+
+ADMIN OPERATIONS:
+login/logout
+Add, Modify, Delete, View and Search Vendor Records/details
+Search by: Id, Place, Type, Rating
+NOTE: The App must help to search a vendor with one or more filters.
+
+vedor type: 1 - corporate, 2 - crt, 3 - institute
+
+tables/collections:
+vendors:
+id, name, employee_name, management_person_name, place, type, 
+phone_number1 phone_number2, email, address, pan_number, gst_number, website
+
+admin:
+id, name, password

@@ -1,0 +1,44 @@
+login page 
+    username: 
+    password:   
+    <Login>
+
+vendors 
+    vendor list page 
+        add vendor 
+        id      vendor      type        place           rating 
+        101     dravid      crt         bangalore       4       edit delete 
+        102     rohit       college     mumbai          3       edit delete 
+        103     dhoni       corporate   chennai         2       edit delete 
+
+    create vendor page 
+        << Go Back 
+        name :
+        type : 
+        place:
+        rating:
+        employee name:
+        management person name:
+        phone number 1:
+        phone number 2:
+        email:
+        address:
+        pan number: 
+        gst number: 
+        web site:
+        <Create>
+
+    edit vendror 
+        << Go Back 
+        ...
+        <Update>
+
+    search vendor 
+        name :  [       ]
+        place:  [       ]
+        type :
+        rating:
+        <search>
+        ... serach results here 
+
+    

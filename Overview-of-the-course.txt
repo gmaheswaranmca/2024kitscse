@@ -1,0 +1,23 @@
+1. Front End Support Technologies
+	HTML 5			content - marking up the content 
+	CSS	3 			look and feel for the content 
+	Bootstrap		UI framework - ready made styles 
+	Javascript		dynamic web page - validation, ui app development
+	
+2. Database 
+	mongo db : document based
+3. Web Development with Python 
+	Python : OOPs 
+	django : web/web api development framework 
+	flask  : web/web api development framework 
+	rest api development : backend app development 
+4. front end development using Angular 
+--- --- --- --- 
+Software Required:
+	browser, VSC, mongo db,
+	python, pip
+		- django, flask as packages 
+	node/npm/npx
+		- angular CLI 
+	git hub [git] + account in the git hub 
+--- --- --- --- 

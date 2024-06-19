@@ -1,0 +1,27 @@
+to write an article / blog:
+    1. heading levels 
+    2. paragraph
+        strong          b 
+        em              i
+    3. bullets and numbering 
+        UL 
+        OL 
+    4. table 
+    5. image 
+
+    Magic square
+    In recreational mathematics, a square array of numbers, usually positive integers, is called a magic square if the sums of the numbers in each row, each column, and both main diagonals are the same.[1][2] The 'order' of the magic square is the number of integers along one side (n), and the constant sum is called the 'magic constant'. 
+
+    .Magic squares that include repeated entries do not fall under this definition and are referred to as 'trivial'. 
+    .The mathematical study of a magic square typically deals with its construction, classification, and enumeration.
+    
+    1.The third-order magic square was known to Chinese mathematicians as early as 190 BCE, and explicitly given by the first century of the common era. 
+    2. The first dateable instance of the fourth-order magic square occurred in 587 CE in India. 
+    3. Specimens of magic squares of order 3 to 9 appear in an encyclopedia from Baghdad c. 983, the Encyclopedia of the Brethren of Purity (Rasa'il Ikhwan al-Safa). 
+
+    4 9 2 
+    3 5 7 
+    8 1 6
+
+
+    image for magic square 

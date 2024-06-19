@@ -1,0 +1,42 @@
+Selectors
+    As elements are added to a web page, 
+    they may be styled using CSS. 
+    A selector designates exactly 
+    which element or elements within our HTML 
+    to target and apply styles 
+    (such as color, size, and position) to. 
+    ---
+    Selectors generally target an attribute value, 
+    such as an "id" or "class" value, or 
+    target the "type of element", 
+    such as <h1> or <p>
+    ---
+    Example:
+    p { ... }
+
+    Here, styles are applied for element "p" ie paragraph 
+
+Properties [name:value;]
+    Once an element is selected, 
+    a property determines the styles 
+    that will be applied to that element.
+
+    Some are
+    background, color, font-size, height, and width
+    p {
+    color: orange;
+    font-size: 16px;
+    }
+
+    Here,
+    "p" is the selector 
+    "color", "font-size" are the properties 
+    "orange" is value for "color" property 
+    "16px" is the value for "font-size" property 
+
+Selectors types 
+    type selector 
+    class selector 
+    id selector 
+    
+

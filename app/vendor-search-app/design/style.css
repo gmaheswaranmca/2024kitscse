@@ -1,0 +1,21 @@
+body {
+    font-family: 'Arial';
+}
+label {
+    display:inline-block;
+    min-width: 250px;
+}
+.form-control {
+    margin-bottom: 20px;
+}
+input {
+    padding: 5px;
+}
+button {
+    padding: 5px;
+    background-color:cadetblue;
+    font-size: 12pt;
+    font-weight: bold;
+    min-width: 100px;
+    border-radius: 5px;
+}

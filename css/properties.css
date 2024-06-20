@@ -1,0 +1,32 @@
+body {
+    font-family: 'Lucida Console';
+}
+
+.today-item {
+    background-color:darkseagreen;
+    color: navy;
+
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    /*solid dotted dahsed double*/
+    /* border-style:groove; */
+    /*inset outset ridge groove*/
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+
+#second {
+    border-color: orange;
+    height: 200px;
+}
+#text-first {
+    color: yellow;
+    font-weight: bold;
+    font-size: 20pt;
+}
+#text-second {
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}

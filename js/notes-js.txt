@@ -68,6 +68,21 @@ date box:
 
 http://localhost:8080/student-process.jsp?name=mahesh&marks=35&email_id=a%40gmail.com&date_of_birth=2000-01-01
 
+----------------------------------------------
+blog
+    title : [  javascript learning   ]
+    tag   : [       ] <add tag>
+    tags  : javascript, html, css 
+bill in supermarket/malls/restaurant etc 
+----------------------------------------------
+    number [        ] add 
+    10
+    20
+    30
+    40
+    
+
+
 
 
 

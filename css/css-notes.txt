@@ -2,3 +2,48 @@
 * stylesheets 
 * selectors 
 UI bootstrap 
+
+properties:
+    1. color, background-color 
+    2. font-family, font-weight, font-style, text-decoration
+        font-family:
+            'Airal'
+            'Lucida Console'
+            'Verdana'
+        font-weight:
+            bold 
+        font-style:
+            italic 
+        text-decoration:
+            underline
+            overline 
+            linethrough
+    3. box properties 
+        margin
+            !margin decides the space surrounding the element  
+        padding 
+            !padding decides the space inside the element 
+        border 
+            shorthand for border-size border-style border-color 
+
+            border-style 
+                solid dotted dashed double 
+                outset inset groove ridge 
+        border-radius 
+            to apply the curved border 
+        width 
+        height 
+    4. background-image 
+        ::NOT LEARNT
+stylesheets 
+    1. linked style sheet 
+    2. internal style sheet 
+    3. inline style sheet ::NOT LEARNT
+
+selectors for applying styles 
+    1. element type     
+        body { ... }
+    2. class 
+        .form-control { ... }
+    3. id
+        #some-id { ... } 

@@ -1,0 +1,39 @@
+In the browser, 
+    menu->more tools->developer tools 
+    ->Console tab 
+
+    > console.log("Hello World!")
+    > let first = 10
+    > let second = 4
+    > first + second 
+    14 
+    > first - second 
+    6
+    > first * second 
+    40
+    > first / second 
+    2.5
+    > first % second 
+    2
+    > first == second 
+    > first > second 
+    > first < second 
+    > first <= second 
+    > first >= second 
+    > first != second 
+
+    && || !
+
+    > document.title 
+    > document.getElementById("text-first").innerText
+    Style 
+    > document.getElementById("text-second").innerText
+    sheets 
+-------------------------------------------------------------
+javascript
+    - client [browser] side programming 
+    - server side programming - node JS / angular frontend   
+-------------------------------------------------------------
+> document.getElementById("firstNumber").value 
+'10'  
+-------------------------------------------------------------

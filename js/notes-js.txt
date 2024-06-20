@@ -37,3 +37,38 @@ javascript
 > document.getElementById("firstNumber").value 
 '10'  
 -------------------------------------------------------------
+student 
+    name [                  ]
+    marks [                 ]
+    email id [              ]
+    date of birth [             ]
+    <create student>
+
+    --- bootstrap 
+    --- client validation, 
+        marks should be the number and bt 0 and 100
+        email id should be the email id 
+        make date of birth as date picker 
+-------------------------------------------------------------
+
+number box:
+<input type="number" id="price" 
+                    min="0"
+                    max="100"
+                    step="0.01"
+                class="form-control"/>
+
+email box:
+<input type="email" id="email_id" 
+                    class="form-control"/>
+
+date box:
+<input type="date" id="date_of_birth" 
+                    class="form-control" value="2024-06-20"/>
+
+
+
+
+
+
+

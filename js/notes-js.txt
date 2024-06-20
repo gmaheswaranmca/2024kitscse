@@ -80,7 +80,10 @@ bill in supermarket/malls/restaurant etc
     20
     30
     40
-    
+------------------------------------
+  > box = "213+456"
+  > eval(box)
+  669
 
 
 

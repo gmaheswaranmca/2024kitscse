@@ -1,0 +1,34 @@
+qkv-bkxy-nki
+var, let, const
+string, number, boolean, object, array
+loops
+//
+if..else
+find max of three numbers 
+find max sal of three employees
+
+while loop
+find reverse of number, ie n=1234
+//
+for loop - fixed iterations
+for loop - element iterator using c-like loop 
+for loop - for each loop 
+//
+exercises
+    1. print fibonacci series for n terms 
+        let n = 10
+        series: 0,1,1,2,3,5,8,13,21,34
+    2. find the sum of the numbers of array 
+        let nubmers = [10,20,30,40,50]; 
+    3. print the names of the array
+        let employees = [
+            {name:'dravid',sal:20000},
+            {name:'dravid',sal:30000},
+            {name:'dravid',sal:25000}
+        ];
+    4. find total salary of above array. 
+    5. print the employees whose salary is less than or 
+       equal to 25000.
+    
+
+

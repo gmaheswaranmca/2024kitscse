@@ -1,0 +1,84 @@
+RDBMS   
+    SQL 
+    Vendors: MySQL, SQL Server, Oracle, Postgres, Sqlite 
+    database
+        table (fixed columns/schema, constraints)
+            row 
+        relation
+            constraints
+                primary key, foreign key 
+                unique key, not null, check 
+    Example for normalized / referencial data model
+        order_bill: id, bill_number, date, amount, tax_amount, net_amount
+        order_items: id, order_bill_id, item_id, qty, price
+
+        id of order_bill is primary key 
+        bill_number of order_bill is unique key 
+        id of order_item is primary key 
+        order_bill_id is the foreign key references order_bill:id
+        item_id is the foreign key references item:id
+mongo db - noSQL
+    database 
+        collection
+            document
+    data models: 
+        1. hierarchical data model 
+        2. referncial / normalized / relational data model 
+    
+    hierarchical data model    
+        order_bill: id, bill_number, date, amount, tax_amount, net_amount,
+                    order_items: [{id, item_id, qty, price}]
+--- --- --- 
+softwares: mongo db | sqlite 
+--- --- --- 
+    sample:
+        database:   emp_db 
+        collection: emps
+            [
+                {name:'dravid',sal:20000},
+                {name:'rohit',sal:30000},
+                {name:'dhoni',sal:25000}
+            ]
+        CRUD operations
+            Create : Add Employee 
+            Read   
+                Read One  : Edit Employee 
+                Read All  : List Employees 
+            Update        : To update the edited employee 
+            Delete        : Delete one employee 
+    vendor_search_db 
+        vendors 
+        users 
+
+        CRUD operation on vendors
+    trainer_search_db 
+        assignment, you are developing the trainer search app. 
+------------------------------------
+default port number for mongo Server
+    27017
+------------------------------------
+note: mongo compass has built in shell 
+------------------------------------
+test>show dbs           #list databases 
+to create database 
+test>use emp_db         #if no emp_db, the emp_db will be created. or switched to emp_db.
+emp_db>db.emps.insertOne({name:'dravid',salary:20000})
+# if emps collection not exist, the collection 'emps' is created 
+  and added the dravid document into emps collection.
+emp_db>db.emps.find()   
+#queries all the emps documents 
+emp_db>db.emps.insertMany(
+    [
+        {name:'rohit',salary:30000},
+        {name:'dhoni',salary:25000}
+    ]
+)
+emp_db>db.emps.find()                   #queries all the employees 
+emp_db>db.emps.find({name:'dravid'})    #queried only dravid but as "array of one doc" 
+emp_db>db.emps.insertOne({name:'gambhir',salary:50000})
+emp_db>db.emps.find({name:'gambhir'})   #queried gambhir doc 
+emp_db>db.emps.updateOne({name:'gambhir'},{$set{salary:60000}}) #update gambhir salary as 60000
+emp_db>db.emps.find({name:'gambhir'})
+emp_db>db.emps.deleteOne({name:'gambhir'})  #to delete the gambhir doc 
+emp_db>db.emps.find({name:'gambhir'})       #to check gambhir deleted or not, raise the query 
+--- --- --- --- --- --- 

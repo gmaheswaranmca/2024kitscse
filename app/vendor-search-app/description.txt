@@ -20,9 +20,9 @@ NOTE: The App must help to search a vendor with one or more filters.
 vedor type: 1 - corporate, 2 - crt, 3 - institute
 
 tables/collections:
-vendors:
+vendors: 10
 id, name, employee_name, management_person_name, place, type, 
 phone_number1 phone_number2, email, address, pan_number, gst_number, website
 
-user:
+user: 3
 id, name, password

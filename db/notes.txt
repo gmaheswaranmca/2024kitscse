@@ -26,8 +26,11 @@ mongo db - noSQL
         2. referncial / normalized / relational data model 
     
     hierarchical data model    
-        order_bill: id, bill_number, date, amount, tax_amount, net_amount,
+        order_bill: { id, bill_number, date, 
+                    amount, tax_amount,    net_amount,
                     order_items: [{id, item_id, qty, price}]
+                }
+        Here, order_items is an attribute of the order_bill doc 
 --- --- --- 
 softwares: mongo db | sqlite 
 --- --- --- 
@@ -82,3 +85,34 @@ emp_db>db.emps.find({name:'gambhir'})
 emp_db>db.emps.deleteOne({name:'gambhir'})  #to delete the gambhir doc 
 emp_db>db.emps.find({name:'gambhir'})       #to check gambhir deleted or not, raise the query 
 --- --- --- --- --- --- 
+In app, 
+    go to vendor_search_db folder 
+        go to description.txt
+            find the fields for 
+            tables/collections 
+            vendors and users
+
+vedor type: 1 - corporate, 2 - crt, 3 - institute
+
+tables/collections:
+vendors: 10
+id, name, employee_name, management_person_name, place, type, ratings, 
+phone_number1 phone_number2, email, address, pan_number, gst_number, website
+
+users: 3
+id, name, password
+
+
+Practical:
+1. Create 3 users 
+2. Create 10 vendors 
+3. Try to update one user password 
+4. Try to update one vendor employee_name  
+5. Delete one vendor 
+6. Query the vendors based on place 
+7. Query the vendors based on type
+8. Query the vendors based on ratings
+9. Query the vendors based on name
+10. update multiple vendor's place name 
+by quering place name only 
+

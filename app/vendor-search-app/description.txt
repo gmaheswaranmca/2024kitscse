@@ -21,8 +21,8 @@ vedor type: 1 - corporate, 2 - crt, 3 - institute
 
 tables/collections:
 vendors: 10
-id, name, employee_name, management_person_name, place, type, 
+id, name, employee_name, management_person_name, place, type, ratings,
 phone_number1 phone_number2, email, address, pan_number, gst_number, website
 
-user: 3
+users: 3
 id, name, password

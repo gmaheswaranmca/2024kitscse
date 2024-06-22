@@ -94,6 +94,9 @@ In app,
 
 vedor type: 1 - corporate, 2 - crt, 3 - institute
 
+0.1 create database 
+dabase: vendor_search_db 
+
 tables/collections:
 vendors: 10
 id, name, employee_name, management_person_name, place, type, ratings, 

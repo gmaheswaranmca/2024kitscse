@@ -61,6 +61,8 @@ default port number for mongo Server
     27017
 ------------------------------------
 note: mongo compass has built in shell 
+In the bottom, there is the shell. 
+ie integrated terminal with mongo shell. 
 ------------------------------------
 test>show dbs           #list databases 
 to create database 
@@ -104,15 +106,6 @@ phone_number1 phone_number2, email, address, pan_number, gst_number, website
 
 users: 3
 id, name, password
-
-
-
-
-
-
-
-
-
 
 Practical:
 use vendor_search_db 
@@ -166,88 +159,6 @@ db.vendors.find({'name':'ebox'})
 10. update multiple vendor's place name 
 by quering place name only 
 --------------------------------------------------
-sqlite:
-    sofware: "DB Browser for SQLite"
---------------------------------------------------
-SQL 
-    - DDL - table,view,procedure,trigger
-        CREATE TABLE    - table creation
-        ALTER TABLE     - add columns, edit cols, add constraints
-        DROP TABLE      - remove table from db 
-
-        TRUCATE TABLE   - purge data, reset to struct  
-    - DML   / DQL
-        INSERT      - add row into table 
-        UPDATE      - edit row 
-        DELETE      - delete row 
-        SELECT      - query ................
-    - TCL (transaction - ACID)
-        BEGIN TRANSACTION   - to let the db session bundle activies started 
-        COMMIT              - to let db the activities shoud be updated to the db 
-                                - completion 
-        ROLLBACK            - reverse all the activies to previous state 
-                                - rejection
-        SAVEPOINT           - to set point from which we do commit / rollback 
-    - DCL (data)
-        GRANT 
-            grant <privileges> on emp_db to 'user1'@'localhost';
-                privileges: INSERT,UPDATE,DELETE,SELECT, 
-                            CREATE,ALTER,DROP, GRANT 
-        REVOKE 
-            revoke <privileges> on emp_db from 'user1'@'localhost';  
---------------------------------------------------
-dept: id, name  
-    1 batting
-    2 bowling
-    3 wicket keeping 
-emp: id, name, salary, dept_id, bonus 
-         rohit, 100000, 1, 40000
-         kohli, 125000, 1, 35000
-         pant,  75000, 3, 55000
-         surya, 120000, 1, 10000
-         dube, 60000, 1, 20000
-         pandiya, 95000, 2, 15000
-         jadeja, 55000, 2, 20000
-         axar, 70000, 2, 13000
-         bumrah, 200000, 2, 75000
-         arsheep, 75000, 2, 60000
-         kuldeep, 50000, 2, 30000
---------------------------------------------------
-CREATE TABLE dept (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name VARCHAR(50) not null
-);
-
-INSERT INTO dept(name) 
-	values('batting');
-INSERT INTO dept(name) 
-	values('bowling'),('wicket keeping');
-	
-DESC dept; -- not working
-
-SELECT * FROM dept;
-
-INSERT INTO emp(name, salary, dept_id, bonus)
-    VALUES ('rohit', 100000, 1, 40000), ('kohli', 125000, 1, 35000),
-         ('pant',  75000, 3, 55000),  ('surya', 120000, 1, 10000),
-         ('dube', 60000, 1, 20000), ('pandiya', 95000, 2, 15000),
-         ('jadeja', 55000, 2, 20000),('axar', 70000, 2, 13000),
-         ('bumrah', 200000, 2, 75000),('arsheep', 75000, 2, 60000),
-         ('kuldeep', 50000, 2, 30000);
-		 
-SELECT * FROM emp;		 
-
-
-
-CREATE TABLE emp (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name VARCHAR(255) not null,
-    salary FLOAT not null,
-    dept_id INTEGER,
-    bonus FLOAT not null,
-	CONSTRAINT emp_dept_id_dept_id FOREIGN KEY(dept_id) REFERENCES dept(id)
-);         
---------------------------------------------------       
 
 
 

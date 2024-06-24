@@ -9,3 +9,4 @@ Design a web site for your profile (resume) - portfolio site
 4. Skill Set 
 5. Hobbies 
 6. Extra-curriculam Info 
+7. Projects / Portfolio

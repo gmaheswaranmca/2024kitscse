@@ -1,0 +1,11 @@
+Design a web site for your profile (resume) - portfolio site 
+1. Overview 
+    About my self 
+    Core technical strength 
+    Strength 
+    Weakness 
+2. Personal Info
+3. Educational Info 
+4. Skill Set 
+5. Hobbies 
+6. Extra-curriculam Info 

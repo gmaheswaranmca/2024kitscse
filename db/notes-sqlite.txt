@@ -80,3 +80,17 @@ SELECT * FROM emp;
 --------------------------------------------------       
 24.06.2024
 --------------------------------------------------
+SELECT * FROM emp WHERE name='dube';
+
+SELECT * FROM emp WHERE name='pandiya';
+
+UPDATE emp
+SET bonus = bonus + 20000
+WHERE name='pandiya';
+
+UPDATE emp
+SET bonus = bonus + 5000
+WHERE name='dube';
+--------------------------------------------------
+
+

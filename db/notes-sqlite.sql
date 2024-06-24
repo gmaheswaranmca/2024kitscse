@@ -196,11 +196,151 @@ WHERE dept_id=(SELECT id FROM dept WHERE name='batting')
 -- display names whose dept name is 'bowler' 
 SELECT name FROM emp 
 WHERE dept_id=(SELECT id FROM dept WHERE name='bowling')
-
-
-
 -- aggregations 
+-- find number of batsman 
+SELECT count(*) as emp_count FROM emp where dept_id=1
+
+-- find total salary of all bowlers 
+SELECT sum(salary) as emp_count FROM emp where dept_id=2
+
+
+-- find total salary of the company 
+SELECT sum(salary) as tot_salary FROM emp
+
+
+-- find avg salary of the company 
+SELECT sum(salary)/count(*) as avg_salary FROM emp
+SELECT avg(salary) as avg_salary FROM emp
+
+-- find min salary and max salary of the bowling dept 
+SELECT min(salary) as min_salary,
+	max(salary) as max_salary 
+FROM emp WHERE dept_id=2;
+
+-- find the emp name of bowlind dept who is getting high pay 
+SELECT name from emp 
+where salary=(SELECT max(salary) from emp where dept_id=2)
+
+
 -- group by, having 
+"group by" will work along with aggregators 
+- we classify the rows into groups 
+- each group we target the aggregator 
+
+-- distinct dept_ids, sorted 
+SELECT dept_id
+FROM emp 
+GROUP BY dept_id 
+-- find each dept total salary 
+1 tot_sal 
+2 tot_sal 
+3 tot_sal
+-- find each dept total salary
+SELECT dept_id, sum(salary)
+FROM emp 
+GROUP BY dept_id 
+-- find each dept min salary
+SELECT dept_id, min(salary) as min_salary
+FROM emp 
+GROUP BY dept_id 
+-- find each dept max salary
+SELECT dept_id, max(salary) as max_salary
+FROM emp 
+GROUP BY dept_id 
+-- find each dept avg salary
+SELECT dept_id, avg(salary) as avg_salary
+FROM emp 
+GROUP BY dept_id 
+-- find each dept num of employess
+SELECT dept_id, count(*) as num_of_emp
+FROM emp 
+GROUP BY dept_id 
+
+-- find each dept total salary - revisit 
+SELECT dept_id, sum(salary) as total_salary
+FROM emp 
+GROUP BY dept_id 
+
+-- find depts and total salary whose total salary > 400000
+SELECT dept_id, sum(salary) as total_salary
+FROM emp 
+GROUP BY dept_id 
+HAVING sum(salary)>400000
+
+
+
 -- join 
 ---------------------------------------------------------------------
+-- display emp name and dept name 
+-- equi join 
+SQL:
+SELECT emp.name as emp_name,
+    dept.name as dept_name 
+FROM emp INNER JOIN dept 
+    ON (emp.dept_id = dept.id)
 
+-- cross join, each employee joins with each dept
+SQL:
+SELECT emp.name as emp_name,
+    dept.name as dept_name 
+FROM emp CROSS JOIN dept 
+
+
+-- outer join
+SQL: 
+INSERT INTO dept(name) values('Impact');
+
+-- joined rows + extra rows (non-joined rows) = outer join 
+outer join concepts:
+LEFT OUTER 
+RIGHT OUTER 
+FULL OUTER 
+
+assumption is emp table has no foreign key, 
+and has extra row(dept_id=6), 
+its dept_id is not in the dept table 
+12 emps, 4 depts 
+
+emp INNER JOIN	dept ON (cond)! matched rows 
+output: 11 rows 
+
+emp LEFT OUTER JOIN	dept ON (cond)
+! matched rows + extra rows in left table 
+output: 11 rows, 1 extra row in emp table 
+(here right side columns fields are null)  
+
+emp RIGHT OUTER JOIN dept ON (cond)
+! matched rows + extra rows in right table 
+output: 11 rows, 1 extra row in dept table 
+(here left side columns fields are null)  
+
+emp FULL OUTER JOIN	dept ON (cond)
+! matched rows + extra rows in left table 
+			   + extra rows in right table 
+output: 11 rows, 1 extra row in emp table,
+(here dept columns fields are null)
+		1 extra row in dept table 
+(here emp columns fields are null)
+
+-- emp_name, dept_name left outer join from dept
+SQL:
+SELECT emp.name as emp_name,
+    dept.name as dept_name 
+FROM dept LEFT OUTER JOIN emp
+    ON (emp.dept_id = dept.id)
+
+emp_name	dept_name
+dube	batting
+kohli	batting
+rohit	batting
+surya	batting
+arsheep	bowling
+axar	bowling
+bumrah	bowling
+jadeja	bowling
+kuldeep	bowling
+pandiya	bowling
+pant	wicket keeping
+null	Impact    
+
+------------------------------------------------------------

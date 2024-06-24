@@ -151,5 +151,56 @@ SELECT name, dept_id
 FROM emp WHERE bonus>15000;
 
 bonus_percentage = (bonus / salary) * 100
+---------------------------------------------------------------------
+Filters Operators 
+    <   >    <>     =       <=      >=
+    IN          BETWEEN         LIKE 
 
-   
+    Logical / Combination : AND     OR      NOT 
+---------------------------------------------------------------------
+-- Display names whose salary between 75000 and 100000
+SELECT name FROM emp 
+WHERE salary BETWEEN 75000 AND 100000;
+-- 50000 and 74000
+SELECT name FROM emp 
+WHERE salary BETWEEN 50000 AND 74000;
+-- not in the above range 
+SELECT name FROM emp 
+WHERE (salary NOT BETWEEN 75000 AND 100000) AND 
+	(salary NOT BETWEEN 50000 AND 74000);
+-- Display name and salary for batsman sort by salary ascending order 
+SELECT name, salary 
+FROM emp 
+WHERE dept_id = 1 ORDER BY salary;   
+--salary based Descending order 
+SELECT name, salary 
+FROM emp 
+WHERE dept_id = 1 ORDER BY salary DESC;
+
+-- display names starts with k 
+select name from emp WHERE name like 'k%';
+
+-- display names not starts with k 
+select name from emp WHERE name not like 'k%';
+
+-- display names ends with p 
+select name from emp WHERE name like '%p';
+
+--display names contains letter l
+select name from emp WHERE name like '%l%';
+---------------------------------------------------------------------
+-- sub query 
+-- display names whose dept name is 'batting' 
+SELECT name FROM emp 
+WHERE dept_id=(SELECT id FROM dept WHERE name='batting')
+-- display names whose dept name is 'bowler' 
+SELECT name FROM emp 
+WHERE dept_id=(SELECT id FROM dept WHERE name='bowling')
+
+
+
+-- aggregations 
+-- group by, having 
+-- join 
+---------------------------------------------------------------------
+

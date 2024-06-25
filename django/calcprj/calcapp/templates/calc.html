@@ -1,0 +1,19 @@
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="first">first number</label>
+        <input type="text" id="first" 
+            name="first" value="{{ first }}"/>
+    </div>
+    <div>
+        <label for="second">second number</label>
+        <input type="text" id="second" 
+            name="second"  value="{{ second }}"/>
+    </div>
+    <div>
+        <label for="result">Result</label>
+        <input type="text" id="result" 
+            name="result"  value="{{ result }}"/>
+    </div>
+    <button>Calculate</button>
+</form>

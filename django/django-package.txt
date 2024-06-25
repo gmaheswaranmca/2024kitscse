@@ -1,0 +1,81 @@
+python / pip 
+
+to install django:
+$pip install django 
+
+to check the django installed or not 
+$pip list 
+$pip show django 
+
+to check dajngo installed, run the django CLI 
+$django-admin --help 
+
+django CLI is "django-admin" 
+--------------------------------------------------
+To create django project:
+    what is django project?
+        django project is collections apps.
+        and setting/configurations to the the apps. 
+    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        django-admin startproject personprj
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    The project "personprj" will be created. 
+--------------------------------------------------
+
+To crate django project for my company dynamic web site:
+
+    $ django-admin startproject maheshsiteprj
+--------------------------------------------------
+folder structure 
+    [] maheshsiteprj            root folder for the project to contain prj config and apps 
+        []maheshsiteprj         prj conf folder 
+            - __init__.py
+            - asgi.py 
+            - settings.py       
+            - urls.py 
+            - wsgi.py 
+        - manage.py             prj starting point 
+        - db.sqlite3 
+--------------------------------------------------
+    Be inside the project folder 
+    $ python manage.py runserver 
+                http://127.0.0.1:8000/          Here, 127.0.0.1 is localhost 
+--------------------------------------------------
+What I do with "maheshsiteprj"
+    Home, About Me, Contact pages 
+        http://127.0.0.1:8000/      home page URL 
+        http://127.0.0.1:8000/about about me page URL 
+        http://127.0.0.1:8000/contact contact page URL 
+
+    $python manage.py startapp maheshsiteapp
+    1. create app in the project 
+        In the project "maheshsiteprj", we will create the app "maheshsiteapp" 
+    2. home-page.html, about-page.html, contact-page.html 
+        in the templates folder of app "maheshsiteapp"
+    3. call the pages in the views ie "business logic"
+        we write three functions to render the pages as output 
+    4. Define the routes in the urls.py 
+        ie URLs for the three pages 
+    5. configure the project 
+        put an entry for app in the settings.py 
+        configure the templates folder in settings.py 
+
+
+
+What is django? 
+    Web development framework for end-to-end web app. 
+    It is similar to "MVC" but "MVT"
+        MVC - model, view, controller - data base objects, presentation, business logic 
+        MVT - model, view, template 
+                - model in django is same to model in MVC ie data logic 
+                - view in django is the business logic 
+                - template in djgno is the presentation 
+
+
+
+
+
+
+
+

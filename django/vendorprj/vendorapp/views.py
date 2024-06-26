@@ -7,9 +7,11 @@ def vendors_list(req):
 
 def vendors_create(req):
     if req.method == "POST":
-        name = req.POST['name']
         vendor = Vendor()
-        vendor.name = name 
+        vendor.name = req.POST['name'] 
+        vendor.ratings = req.POST['ratings'] 
+        vendor.place = req.POST['place'] 
+        vendor.phone_number = req.POST['phone_number'] 
         vendor.save()
         return redirect("/")
         
@@ -20,6 +22,9 @@ def vendors_edit(req, id):
     if req.method == "POST":
         name = req.POST['name']
         vendor.name = name 
+        vendor.ratings = req.POST['ratings'] 
+        vendor.place = req.POST['place'] 
+        vendor.phone_number = req.POST['phone_number'] 
         vendor.save()
         return redirect("/")        
 

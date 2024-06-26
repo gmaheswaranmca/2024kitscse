@@ -1,9 +1,19 @@
 <h1>Vendor List</h1>
 <a href="/vendors/create">New Vendor</a> <br>
 <table>
-    <tr><th>id</th><th>name</th><th>ops</th></tr>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>ratings</th>
+        <th>place</th>
+        <th>phone_number</th>
+        <th>ops</th></tr>
     {% for vendor in vendors %}
-        <tr><td>{{ vendor.id }}</td><td>{{ vendor.name }}</td>
+        <tr><td>{{ vendor.id }}</td>
+            <td>{{ vendor.name }}</td>
+            <td>{{ vendor.ratings }}</td>
+            <td>{{ vendor.place }}</td>
+            <td>{{ vendor.phone_number }}</td>
         <td>
             <a href="/vendors/edit/{{ vendor.id }}">edit</a>
         </td></tr>

@@ -1,3 +1,6 @@
+Django app to submit the form having a number 
+to find the square of the number. 
+
 Step 1: Set Up Your Django Project
 Assuming you have Python and Django installed, 
 let's start by creating a new Django project and then an app within that project.
@@ -5,11 +8,11 @@ let's start by creating a new Django project and then an app within that project
 command prompt
 ````````````````````````
 # Create a new Django project
-django-admin startproject calcprj
-cd calcprj
+django-admin startproject squareprj
+cd squareprj
 
 # Create a new Django app inside the project
-python manage.py startapp calcapp
+python manage.py startapp squareapp
 ````````````````````````
 Adjust the Django Project Structure:
 
@@ -19,7 +22,7 @@ Edit calcprj/settings.py
 ````````````````````````
 INSTALLED_APPS = [
     # other installed apps
-    'calcapp',
+    'squareapp',
 ]
 ````````````````````````
 ````````````````````````
@@ -37,66 +40,58 @@ Templates are HTML files that Django renders to create the final web pages.
 Create a template file for our view:
 
 Create a directory templates inside your app (calcapp/templates).
-Inside this directory, create calc.html:
+Inside this directory, create square.html:
 ````````````````````````
 <form method="POST">
     {% csrf_token %}
     <div>
-        <label for="first">first number</label>
-        <input type="text" id="first" 
-            name="first" value="{{ first }}"/>
-    </div>
-    <div>
-        <label for="second">second number</label>
-        <input type="text" id="second" 
-            name="second"  value="{{ second }}"/>
+        <label for="num">number</label>
+        <input type="text" id="num" 
+            name="num" value="{{ num }}"/>
     </div>
     <div>
         <label for="result">Result</label>
         <input type="text" id="result" 
             name="result"  value="{{ result }}"/>
     </div>
-    <button>Calculate</button>
+    <button>Calculate Square</button>
 </form>
 ````````````````````````
 
 Step 3: Create a View
 Views handle the logic of your application and interact with models and forms. 
-Let's create a view that renders the form and processes the sum calculation.
+Let's create a view that renders the form and processes the square calculation.
 
-Edit calcapp/views.py:
+Edit squareapp/views.py:
 
 ````````````````````````
 from django.shortcuts import render
 
 # Create your views here.
-def calc(req):
+def square(req):
     if req.method == "POST":
-        first = req.POST["first"]
-        second = req.POST["second"]
-        result = int(first) + int(second)        
+        num = int(req.POST["num"])
+        result = num * num
     else:
-        first = 0 
-        second = 0 
+        num = 0
         result = 0 
-    return render(req,'calc.html',{'first':first,
-                                   'second':second,
+    return render(req,'square.html',{'num':num,
                                    'result':result})
 ````````````````````````
 
 Step 4: Configure URLs
 Finally, we need to define URLs so Django knows how to map URLs to views.
 
-Edit calcprj/urls.py:
+Edit squareprj/urls.py:
 ````````````````````````
 from django.contrib import admin
 from django.urls import path, include
 
 from django.contrib import admin
 from django.urls import path
-from calcapp import views
+from squareapp import views
 urlpatterns = [
-    path('calc/',views.calc),
+    path('square/',views.square),
     path('admin/', admin.site.urls),
 ]
 
@@ -107,24 +102,24 @@ Now, let's run the Django development server and test our application:
 ````````````````````````
 python manage.py runserver
 ````````````````````````
-Visit http://127.0.0.1:8000/calc in your web browser. 
-You should see the form to input two numbers. 
-Enter some numbers, submit the form, and 
-you should see the result displayed.
+Visit http://127.0.0.1:8000/square in your web browser. 
+You should see the form to input a number. 
+Enter the number, submit the form, and 
+you should see the result "the square value" displayed.
 
 Explanation
     Views (views.py): 
-        The "calc" view function handles both 
+        The "square" view function handles both 
             rendering the form (GET request) and 
             processing the form submission (POST request). 
-        It calculates the sum of the two numbers and 
-        renders the result using the calc.html template.
+        It calculates the square of the number and 
+        renders the result using the square.html template.
     Templates: 
-        We created a template (calc.html) 
+        We created a template (square.html) 
             to render the form and display the result respectively.
     URLs: 
-        Configured URL patterns to map the "calc" view function 
-        to the URL  "/calc" of our application.
+        Configured URL patterns to map the "square" view function 
+        to the URL  "/square" of our application.
 
 This setup should give you a basic understanding of how to create a form, 
 process input, and display results using Django. 

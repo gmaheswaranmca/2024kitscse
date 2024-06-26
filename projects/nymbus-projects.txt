@@ -1,0 +1,73 @@
+HTML apps 
+    1. create a HTML app for your resume.
+    The pages are personal details, 
+    educational qualifications, skills, 
+    courses, hobbies etc 
+
+django apps 
+    1. Create a django calculator 
+    app to submit two numbers and to find 
+    sum of two numbers. 
+    2. Create a django calculator 
+    app to submit a number and to find 
+    square of the number. 
+    3. Create a django circle area calculator 
+    app to submit a radius and to find 
+    area of the circle.
+    4. Create a django rectangle area calculator 
+    app to submit the length and breath and 
+    to find area of the square.
+    5. Create a django app to read persons 
+    from sqlite databse and to 
+    display the persons as HTML table.
+    6. Create a django app to conduct
+    CRUD operations on vendor 
+    of fields {id,name,place,ratings,phone_number}.
+        Vendor List : 
+            List of vendors displayed as HTML Table. 
+            Here, we have facility to edit 
+            and delete the vendor.
+
+            The delete option will delete the vendor 
+            permanantly.
+        Create Vendor: 
+            Vendor details form is submitted here.
+        Edit Vendor:
+            The vendor is displayed for editing. 
+            After edited, the vendor details 
+            will be updated here. 
+        
+
+flask apps 
+    1. Create a flask calculator 
+    app to submit two numbers and to find 
+    sum of two numbers. 
+    2. Create a flask calculator 
+    app to submit a number and to find 
+    square of the number. 
+    3. Create a flask circle area calculator 
+    app to submit a radius and to find 
+    area of the circle.
+    4. Create a flask rectangle area calculator 
+    app to submit the length and breath and 
+    to find area of the square.
+    5. Create a flask app to read persons 
+    from sqlite databse and to 
+    display the persons as HTML table.
+    6. Create a flask app to conduct
+    CRUD operations on vendor 
+    of fields {id,name,place,ratings,phone_number}.
+        Vendor List : 
+            List of vendors displayed as HTML Table. 
+            Here, we have facility to edit 
+            and delete the vendor.
+
+            The delete option will delete the vendor 
+            permanantly.
+        Create Vendor: 
+            Vendor details form is submitted here.
+        Edit Vendor:
+            The vendor is displayed for editing. 
+            After edited, the vendor details 
+            will be updated here. 
+

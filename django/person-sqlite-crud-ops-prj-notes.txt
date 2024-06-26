@@ -1,0 +1,143 @@
+Django app to display person names from sqlite "person_db.db" database.
+
+Step 1: Set Up Your Django Project
+Assuming you have Python and Django installed, 
+let's start by creating a new Django project and then an app within that project.
+
+command prompt
+````````````````````````
+# Create a new Django project
+django-admin startproject personprj
+cd personprj
+
+# Create a new Django app inside the project
+python manage.py startapp personapp
+````````````````````````
+Adjust the Django Project Structure:
+
+Open settings.py and locate the INSTALLED_APPS section:
+
+Edit personprj/settings.py
+````````````````````````
+INSTALLED_APPS = [
+    # other installed apps
+    'personapp',
+]
+````````````````````````
+````````````````````````
+import os
+TEMPLATES = [
+    {
+        # other code 
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        # other code 
+    },
+]
+
+Step 2: Create Templates
+Templates are HTML files that Django renders to create the final web pages. 
+Create a template file for our view:
+
+Create a directory templates inside your app (personapp/templates).
+Inside this directory, create persons-list.html:
+````````````````````````
+<table>
+    <tr><th>id</th><th>name</th><th>ops</th></tr>
+    {% for person in persons %}
+        <tr><td>{{ person.id }}</td><td>{{ person.name }}</td><td></td></tr>
+    {% endfor %}
+</table>
+````````````````````````
+
+Step 3: Create a model 
+````````````````````````
+from django.db import models
+
+class Person(models.Model):
+    name = models.CharField(max_length = 255)
+
+````````````````````````
+
+Step 3: Create a View
+Views handle the logic of your application and interact with models and forms. 
+Let's create a view that renders page of dynamic table 
+to display the person names from db .
+
+Edit personapp/views.py:
+
+````````````````````````
+from django.shortcuts import render
+from .models import Person 
+# Create your views here.
+def persons_list(req):
+    persons = Person.objects.all()
+    return render(req,'persons-list.html',{'persons':persons})
+````````````````````````
+
+Step 4: Configure URLs
+Finally, we need to define URLs so Django knows how to map URLs to views.
+
+Edit personprj/urls.py:
+````````````````````````
+from django.contrib import admin
+from django.urls import path, include
+
+from django.contrib import admin
+from django.urls import path
+from personapp import views
+urlpatterns = [
+    path('',views.persons_list),
+    path('admin/', admin.site.urls),
+]
+
+````````````````````````
+Step 5: Run the Development Server
+Now, let's run the Django development server and test our application:
+
+Now, do models migrations to the database. 
+
+````````````````````````
+# to form db script in the form of python code 
+python manage.py makemigrations 
+
+# to run the migrations script into dabase 
+# so that tables for each model will be created 
+python manage.py migrate  
+````````````````````````
+
+````````````````````````
+
+python manage.py runserver
+````````````````````````
+Visit http://127.0.0.1:8000 in your web browser. 
+You should see the person names in the page. 
+
+Explanation
+    Views (views.py): 
+        The "persons_list" view function 
+        queries persons as 'python list' from database 
+        and displays all the persons in the tabular form. 
+        It renders the perons using the persons-list.html template.
+    Templates: 
+        We created a template (persons-list.html) 
+            to render the page and display the persons in HTML table.
+    URLs: 
+        Configured URL patterns to map the "persons_list" view function 
+        to the URL root of our application.
+
+This setup should give you a basic understanding of 
+    how to create a HTML page, 
+    connects to sqlite using model, 
+    and display the results in template page
+    using Django. 
+
+
+Go to the sqlite browser and run the script for the project db.
+SQL:
+---------------------------
+INSERT INTO personapp_person(name) 
+	VALUES('krishna teja'),('sadhik'),('varsha'),('siri');
+---------------------------
+
+After running the script, Write Changes button to be clicked 
+to do persist store. 

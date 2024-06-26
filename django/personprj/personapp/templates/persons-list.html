@@ -1,0 +1,6 @@
+<table>
+    <tr><th>id</th><th>name</th><th>ops</th></tr>
+    {% for person in persons %}
+        <tr><td>{{ person.id }}</td><td>{{ person.name }}</td><td></td></tr>
+    {% endfor %}
+</table>

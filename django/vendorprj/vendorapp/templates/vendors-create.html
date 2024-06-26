@@ -1,0 +1,10 @@
+<h1>New Vendor</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="name">name</label>
+        <input type="text" 
+            name="name" id="id"/>
+    </div>
+    <button>Create Vendor</button>
+</form>

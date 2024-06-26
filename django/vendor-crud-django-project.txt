@@ -1,0 +1,197 @@
+Django app to display vendor{id, name} from sqlite "vendor_db.db" database.
+
+Step 1: Set Up Your Django Project
+Assuming you have Python and Django installed, 
+let's start by creating a new Django project and then an app within that project.
+
+command prompt
+````````````````````````
+# Create a new Django project
+django-admin startproject vendorprj
+cd vendorprj
+
+# Create a new Django app inside the project
+python manage.py startapp vendorapp
+````````````````````````
+Adjust the Django Project Structure:
+
+Open settings.py and locate the INSTALLED_APPS section:
+
+Edit vendorprj/settings.py
+````````````````````````
+INSTALLED_APPS = [
+    # other installed apps
+    'vendorapp',
+]
+````````````````````````
+
+````````````````````````
+import os
+TEMPLATES = [
+    {
+        # other code 
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        # other code 
+    },
+]
+````````````````````````
+
+````````````````````````
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'vendor_db.db',
+    }
+}
+````````````````````````
+
+
+Step 2: Create Templates
+Templates are HTML files that Django renders to create the final web pages. 
+Create a template file for our view:
+
+Create a directory templates inside your app (vendorapp/templates).
+Inside this directory, 
+
+create vendors-list.html:
+````````````````````````
+<h1>Vendor List</h1>
+<a href="/vendors/create">New Vendor</a> <br>
+<table>
+    <tr><th>id</th><th>name</th><th>ops</th></tr>
+    {% for vendor in vendors %}
+        <tr><td>{{ vendor.id }}</td><td>{{ vendor.name }}</td>
+        <td>
+            <a href="/vendors/edit/{{ vendor.id }}">edit</a>
+        </td></tr>
+    {% endfor %}
+</table>
+````````````````````````
+
+create vendors-create.html:
+````````````````````````
+<h1>New Vendor</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="name">name</label>
+        <input type="text" 
+            name="name" id="id"/>
+    </div>
+    <button>Create Vendor</button>
+</form> 
+````````````````````````
+
+create vendors-edit.html:
+````````````````````````
+<h1>Edit Vendor</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" 
+        name="id" value="{{ vendor.id }}"/>
+    <div>
+        <label for="name">name</label>
+        <input type="text" 
+            name="name" id="name" 
+            value="{{ vendor.name }}"/>
+    </div>
+    <button>Update Vendor</button>
+</form> 
+````````````````````````
+
+
+Step 3: Create a model 
+
+Edit vendorapp/models.py 
+````````````````````````
+from django.db import models
+
+class Vendor(models.Model):
+    name = models.CharField(max_length = 255)
+````````````````````````
+
+Step 3: Create a View
+Views handle the logic of your application and interact with models and forms. 
+Let's create a view that renders page of dynamic table 
+to display the person names from db .
+
+Edit vendorapp/views.py:
+````````````````````````
+from django.shortcuts import render, redirect,get_object_or_404
+from .models import Vendor 
+# Create your views here.
+def vendors_list(req):
+    vendors = Vendor.objects.all()
+    return render(req,'vendors-list.html',{'vendors':vendors})
+
+def vendors_create(req):
+    if req.method == "POST":
+        name = req.POST['name']
+        vendor = Vendor()
+        vendor.name = name 
+        vendor.save()
+        return redirect("/")
+        
+    return render(req, 'vendors-create.html')
+
+def vendors_edit(req, id):
+    vendor = get_object_or_404(Vendor,pk=id)
+    if req.method == "POST":
+        name = req.POST['name']
+        vendor.name = name 
+        vendor.save()
+        return redirect("/")        
+
+    return render(req, 'vendors-edit.html',{'vendor':vendor})
+````````````````````````
+
+Step 4: Configure URLs
+Finally, we need to define URLs so Django knows how to map URLs to views.
+
+Edit vendorprj/urls.py:
+````````````````````````
+from django.contrib import admin
+from django.urls import path, include
+
+from django.contrib import admin
+from django.urls import path
+from vendorapp import views
+urlpatterns = [
+    path('',views.vendors_list),
+    path('vendors/create/',views.vendors_create),
+    path('vendors/edit/<int:id>',views.vendors_edit),
+    path('admin/', admin.site.urls),
+]
+
+````````````````````````
+Step 5: 
+Now, do models migrations to the database. 
+
+````````````````````````
+# to form db script in the form of python code 
+python manage.py makemigrations 
+
+# to run the migrations script into dabase 
+# so that tables for each model will be created 
+python manage.py migrate  
+````````````````````````
+Go to the sqlite browser and run the script for the project db.
+SQL:
+---------------------------
+INSERT INTO vendorapp_vendor(name) 
+	VALUES('bytexl'),('ebox');
+---------------------------
+
+After running the script, Write Changes button to be clicked 
+to do persist store. 
+
+
+Run the Development Server
+Now, let's run the Django development server and test our application:
+
+````````````````````````
+python manage.py runserver
+````````````````````````
+Visit http://127.0.0.1:8000 in your web browser. 
+You should see the vendors in the page. 
+

@@ -1,0 +1,11 @@
+<h1>Vendor List</h1>
+<a href="/vendors/create">New Vendor</a> <br>
+<table>
+    <tr><th>id</th><th>name</th><th>ops</th></tr>
+    {% for vendor in vendors %}
+        <tr><td>{{ vendor.id }}</td><td>{{ vendor.name }}</td>
+        <td>
+            <a href="/vendors/edit/{{ vendor.id }}">edit</a>
+        </td></tr>
+    {% endfor %}
+</table>

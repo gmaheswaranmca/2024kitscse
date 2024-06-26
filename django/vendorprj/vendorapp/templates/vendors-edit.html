@@ -1,0 +1,13 @@
+<h1>Edit Vendor</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" 
+        name="id" value="{{ vendor.id }}"/>
+    <div>
+        <label for="name">name</label>
+        <input type="text" 
+            name="name" id="name" 
+            value="{{ vendor.name }}"/>
+    </div>
+    <button>Update Vendor</button>
+</form> 

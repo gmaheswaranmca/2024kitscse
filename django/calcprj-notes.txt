@@ -1,0 +1,135 @@
+Step 1: Set Up Your Django Project
+Assuming you have Python and Django installed, 
+let's start by creating a new Django project and then an app within that project.
+
+command prompt
+````````````````````````
+# Create a new Django project
+django-admin startproject calcprj
+cd calcprj
+
+# Create a new Django app inside the project
+python manage.py startapp calcapp
+````````````````````````
+Adjust the Django Project Structure:
+
+Open settings.py and locate the INSTALLED_APPS section:
+
+Edit calcprj/settings.py
+````````````````````````
+INSTALLED_APPS = [
+    # other installed apps
+    'calcapp',
+]
+````````````````````````
+
+````````````````````````
+import os
+TEMPLATES = [
+    {
+        # other code 
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        # other code 
+    },
+]
+
+Step 2: Create Templates
+Templates are HTML files that Django renders to create the final web pages. 
+Create a template file for our view:
+
+Create a directory templates inside your app (calcapp/templates).
+Inside this directory, create calc.html:
+````````````````````````
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="first">first number</label>
+        <input type="text" id="first" 
+            name="first" value="{{ first }}"/>
+    </div>
+    <div>
+        <label for="second">second number</label>
+        <input type="text" id="second" 
+            name="second"  value="{{ second }}"/>
+    </div>
+    <div>
+        <label for="result">Result</label>
+        <input type="text" id="result" 
+            name="result"  value="{{ result }}"/>
+    </div>
+    <button>Calculate</button>
+</form>
+````````````````````````
+
+Step 3: Create a View
+Views handle the logic of your application and interact with models and forms. 
+Let's create a view that renders the form and processes the sum calculation.
+
+Edit calcapp/views.py:
+
+````````````````````````
+from django.shortcuts import render
+
+# Create your views here.
+def calc(req):
+    if req.method == "POST":
+        first = req.POST["first"]
+        second = req.POST["second"]
+        result = int(first) + int(second)        
+    else:
+        first = 0 
+        second = 0 
+        result = 0 
+    return render(req,'calc.html',{'first':first,
+                                   'second':second,
+                                   'result':result})
+````````````````````````
+
+Step 4: Configure URLs
+Finally, we need to define URLs so Django knows how to map URLs to views.
+
+Edit calcprj/urls.py:
+````````````````````````
+from django.contrib import admin
+from django.urls import path, include
+
+from django.contrib import admin
+from django.urls import path
+from calcapp import views
+urlpatterns = [
+    path('calc/',views.calc),
+    path('admin/', admin.site.urls),
+]
+
+````````````````````````
+Step 5: Run the Development Server
+Now, let's run the Django development server and test our application:
+
+````````````````````````
+python manage.py runserver
+````````````````````````
+Visit http://127.0.0.1:8000/calc in your web browser. 
+You should see the form to input two numbers. 
+Enter some numbers, submit the form, and 
+you should see the result displayed.
+
+Explanation
+    Views (views.py): 
+        The "calc" view function handles both 
+            rendering the form (GET request) and 
+            processing the form submission (POST request). 
+        It calculates the sum of the two numbers and 
+        renders the result using the calc.html template.
+    Templates: 
+        We created a template (calc.html) 
+            to render the form and display the result respectively.
+    URLs: 
+        Configured URL patterns to map the "calc" view function 
+        to the URL  "/calc" of our application.
+
+This setup should give you a basic understanding of how to create a form, 
+process input, and display results using Django. 
+You can expand upon this by adding more features or 
+improving the user interface as per your requirements.
+
+

@@ -1,3 +1,4 @@
+<a href="/vendors/create">New Vendor</a>
 <table>
     <tr>
         <th>id</th>
@@ -5,6 +6,7 @@
         <th>ratings</th>
         <th>place</th>
         <th>phone_number</th>
+        <th></th>
     </tr>
     {% for vendor in vendors %}
     <tr>
@@ -13,6 +15,10 @@
         <td>{{ vendor.ratings }}</td>
         <td>{{ vendor.place }}</td>
         <td>{{ vendor.phone_number }}</td>
+        <td>
+            <a href="/vendors/edit/{{ vendor.id }}">edit</a>
+            <a href="/vendors/delete/{{ vendor.id }}">delete</a>
+        </td>
     </tr>
     {% endfor %}
 </table>

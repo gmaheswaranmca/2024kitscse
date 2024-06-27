@@ -59,7 +59,44 @@ def readAllVendors():
                 phone_number=row[4]))
     return vendors 
 
+def updateVendor(vendor):
+    sql = """UPDATE vendor
+    set name=?,ratings=?,
+    place=?, phone_number=?
+    WHERE (id=?)"""
+    params = (vendor.name, vendor.ratings,
+              vendor.place, vendor.phone_number,
+              vendor.id, )
+    con = connect()
+    cur = con.cursor()
+    cur.execute(sql,params)
+    con.commit()
+    con.close()
+def deleteVendor(id):
+    sql = """DELETE from vendor
+    WHERE (id=?)"""
+    params = (id, )
+    con = connect()
+    cur = con.cursor()
+    cur.execute(sql,params)
+    con.commit()
+    con.close()
+    
+def readVendorById(id):
+    sql = """SELECT id,name,ratings,
+    place, phone_number FROM vendor
+    WHERE (id=?)"""
+    params = (id,)
+    con = connect()
+    cur = con.cursor()
+    response = cur.execute(sql,params)
+    result = response.fetchone() #row=[id,name,...]
+    con.close()
 
+    vendor = Vendor(id=result[0],name=result[1],
+                ratings=result[2],place=result[3],
+                phone_number=result[4])
+    return vendor
 
 
 

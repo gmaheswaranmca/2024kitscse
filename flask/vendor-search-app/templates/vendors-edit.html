@@ -1,0 +1,29 @@
+<h3>Edit Vendor</h3>
+<a href="/">Go Back</a>
+<form method="POST">
+    <input type="hidden" name="id"
+        value="{{ vendor.id }}"/>
+    <div>
+        <label for="name">name</label>
+        <input type="text" name="name" id="name"
+            value="{{ vendor.name }}"/>
+    </div>
+    <div>
+        <label for="ratings">ratings</label>
+        <input type="number" name="ratings" 
+            id="ratings"
+            value="{{ vendor.ratings }}"/>
+    </div>
+    <div>
+        <label for="place">place</label>
+        <input type="text" name="place" id="place"
+        value="{{ vendor.place }}"/>
+    </div>
+    <div>
+        <label for="phone_number">phone number</label>
+        <input type="text" name="phone_number" 
+            id="phone_number"
+            value="{{ vendor.phone_number }}"/>
+    </div>
+    <button>Update Vendor</button>
+</form>

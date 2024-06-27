@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>ratings</th>
+        <th>place</th>
+        <th>phone_number</th>
+    </tr>
+    {% for vendor in vendors %}
+    <tr>
+        <td>{{ vendor.id }}</td>
+        <td>{{ vendor.name }}</td>
+        <td>{{ vendor.ratings }}</td>
+        <td>{{ vendor.place }}</td>
+        <td>{{ vendor.phone_number }}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Layout Example</title>
+<style>
+    /* Overall container */
+    .container {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        gap: 10px;
+    }
+
+    /* Right side container */
+    .right-side {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        gap: 10px;
+    }
+
+    /* Bottom right container */
+    .bottom-right {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+    }
+
+    /* Styling for sections */
+    .section {
+        padding: 10px;
+        background-color: #f0f0f0; /* Just for visualization */
+    }
+
+    /* Specific styling for items */
+    .item {
+        background-color: #e0e0e0; /* Just for visualization */
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section left-side">
+        Left Side Content
+    </div>
+    <div class="right-side">
+        <div class="section top-right">
+            Top Right Content
+        </div>
+        <div class="bottom-right">
+            <div class="item">Bottom Right Left</div>
+            <div class="item">Bottom Right Right</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

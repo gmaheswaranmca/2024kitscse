@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Layout Example</title>
+<style>
+    /* Overall container */
+    .container {
+        display: flex;
+    }
+
+    /* Left side */
+    .left-side {
+        width: 25%;
+        background-color: #f0f0f0; /* Just for visualization */
+        padding: 10px;
+        
+    }
+
+    /* Right side */
+    .right-side {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Top right */
+    .top-right {
+        height: 50%;
+        background-color: #e0e0e0; /* Just for visualization */
+        padding: 10px;
+    }
+
+    /* Bottom right */
+    .bottom-right {
+        height: 50%;
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Bottom right items */
+    .bottom-right-item {
+        flex: 1; /* Equal width distribution */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #d0d0d0; /* Just for visualization */
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-side">
+        Left Side Content
+    </div>
+    <div class="right-side">
+        <div class="top-right">
+            Top Right Content
+        </div>
+        <div class="bottom-right">
+            <div class="bottom-right-item">
+                Bottom Right Left
+            </div>
+            <div class="bottom-right-item">
+                Bottom Right Right
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

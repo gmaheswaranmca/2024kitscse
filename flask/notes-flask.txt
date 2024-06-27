@@ -18,3 +18,10 @@ flask - python web development framework, library
                 |__home.html
                 |__about.html ...
 
+--------------------------------------------------
+Number: [    5      ]      num      POST          
+      Square of 5 is 25
+<Find Square>
+
+      HTML Form 
+      Form Submission Handler 

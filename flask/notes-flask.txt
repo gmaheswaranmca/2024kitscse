@@ -1,0 +1,20 @@
+flask - python web development framework, library 
+        - web app 
+        - backend (REST API) app 
+
+1. Routes 
+    Root URL: http://server:port/
+
+    home page   root "/" 
+    services    "/services"
+    about us    "/about-us"
+    careers     "/careers"
+    contact     "/contact"  http://server:port/contact 
+
+
+    |_ mysite/
+          |__app.py 
+          |__templates/
+                |__home.html
+                |__about.html ...
+

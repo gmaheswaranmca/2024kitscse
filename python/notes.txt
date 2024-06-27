@@ -1,3 +1,6 @@
+https://www.hackerrank.com/contests/fundamentals-of-programming/challenges
+
+
 1. app dev
     microservices app dev using frameworks 
         django 

@@ -95,8 +95,11 @@ def readVendorById(id):
     result = response.fetchone() #row=[id,name,...]
     con.close()
 
-    vendor = Vendor(id=result[0],name=result[1],
-                ratings=result[2],place=result[3],
-                phone_number=result[4])
+    if result != None:
+        vendor = Vendor(id=result[0],name=result[1],
+                    ratings=result[2],place=result[3],
+                    phone_number=result[4])
+    else:
+        vendor = None 
     return vendor
 

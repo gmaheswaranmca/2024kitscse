@@ -35,30 +35,49 @@ def vendor_readall():
             'place':vendor.place,
             'phone_number':vendor.phone_number
         })
-    return jsonify(vendors)
+    return jsonify(dict_vendors)
 
-'''
-@app.route("/vendors/edit/<id>",methods=["GET","POST"])
-def vendor_edit(id):
-    print('debugging 1001 id=',id)
-    if request.method == "POST":
-        vendor = Vendor()
-        vendor.id = request.form['id']
-        vendor.name = request.form['name']
-        vendor.ratings = request.form['ratings']
-        vendor.place = request.form['place']
-        vendor.phone_number = request.form['phone_number']
-        updateVendor(vendor)
-        return redirect('/')
+@app.route("/vendors/<id>",methods=["GET"])
+def vendors_read_byid(id):
+    vendor = readVendorById(id)
+    if vendor != None:
+        dict_vendor = {
+            'id':vendor.id,
+            'name':vendor.name,
+            'ratings':vendor.ratings,
+            'place':vendor.place,
+            'phone_number':vendor.phone_number
+        }
+        return jsonify(dict_vendor)
     else:
-        vendor = readVendorById(id)
-        return render_template('vendors-edit.html',vendor=vendor)
+        return jsonify({'error':'Vendor Not Found'})
+    
+@app.route("/vendors/<id>",methods=["PUT"])
+def vendors_update(id):
+    vendor = Vendor()    
+    body = request.get_json()
+    vendor.id = id
+    vendor.name = body['name']
+    vendor.ratings = body['ratings']
+    vendor.place = body['place']
+    vendor.phone_number = body['phone_number']
+    updateVendor(vendor)
+    vendor = readVendorById(id)
+    dict_vendor = {
+        'id':vendor.id,
+        'name':vendor.name,
+        'ratings':vendor.ratings,
+        'place':vendor.place,
+        'phone_number':vendor.phone_number
+    }
+    return jsonify(dict_vendor)
 
-@app.route("/vendors/delete/<int:id>",methods=["GET"])
-def vendor_delete(id):
+
+@app.route("/vendors/<id>",methods=["DELETE"])
+def vendors_delete(id):
     deleteVendor(id)
-    return redirect('/')
-'''
+    return jsonify({'message':'vendor deleted successfully.'})
+
 
 
 

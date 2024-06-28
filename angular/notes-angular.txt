@@ -1,0 +1,33 @@
+what is angular? 
+    - front end web development framework 
+    other fe frameworks are: react JS, vue JS
+    - UI / Presentation 
+
+what are the backends frameworks?
+    Python - django, flask(*)
+    Java - Spring Boot 
+    Javascript - Express JS 
+    C#.NET - ASP.NET Web API 
+
+    REST APIs - http based APIs are called REST APIs. 
+
+Angular 
+    Angular CLI     
+
+-------------command line--------------------------
+npm install -g @angular/cli
+
+ng new squarecalc --standalone=false 
+
+cd squarecalc 
+
+code .
+
+ng generate component calc
+
+ng serve 
+
+ng generate component sum-calc
+---------------------------------------
+
+

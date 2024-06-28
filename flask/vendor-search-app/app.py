@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect 
+from flask import Flask, request, render_template, jsonify 
 from db import Vendor, vendorTablesCreate, createVendor, readAllVendors, updateVendor, deleteVendor, readVendorById
 app = Flask(__name__)
 

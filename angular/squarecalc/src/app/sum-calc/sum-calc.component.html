@@ -1,0 +1,22 @@
+<div>
+    <h3>Sum Calculator</h3>
+    <div>
+        <label for="num1">Number 1</label>
+        <input type="text" id="num1"
+            [(ngModel)]="num1">
+    </div>
+    <div>
+        <label for="num2">Number 2</label>
+        <input type="text" id="num2"
+            [(ngModel)]="num2">
+    </div>
+    <div>
+        <label for="res">Sum</label>
+        <input type="text" id="res"
+            [value]="res"
+        >
+    </div>
+    The sum of {{ num1 }} and {{ num2 }}is {{ res }}
+    <button (click)="this.findSum()">Find Sum</button>
+
+</div>

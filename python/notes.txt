@@ -30,3 +30,42 @@ for eSal in salaries: # element iterator / for each loop
     s += eSal 
 print(f'total salaries = {s}')
 
+
+
+
+
+
+
+
+
+    1
+1: 30           10
+2: 140          99
+------------------
+   171             09
+
+
+99   99
+99   99
+
+
+Xdollar=int(input())
+Xcent=int(input())
+Ydollar=int(input())
+Ycent=int(input())
+Scent=Xcent+Ycent
+Sdollar=Xdollar+Ydollar
+if Scent >= 100:
+    Sdollar += 1
+    Scent -= 100
+
+print(Sdollar)
+print(Scent)
+
+
+
+
+
+
+
+

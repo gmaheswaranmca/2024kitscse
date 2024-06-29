@@ -1,0 +1,33 @@
+flask - python web development framework, library 
+        - web app 
+        - backend (REST API) app 
+
+Install flask 
+	Check: Python, pip are installed 
+	pip install flask 
+	pip install flask-cors 
+
+Install VSC Extension 
+	Thunder Client 
+	
+API Request in Thunder Client 
+	GET http://localhost:5000/vendors 
+	POST http://localhost:5000/vendors 
+		{"name":"bytexl","ratings":4,"place":"hyderabad","phone_number":"112233"}
+	GET http://localhost:5000/vendors
+	POST http://localhost:5000/vendors 
+		{"name":"ebox","ratings":3,"place":"coimbatore","phone_number":"78878978"}
+	GET http://localhost:5000/vendors
+	GET http://localhost:5000/vendors/1
+	GET http://localhost:5000/vendors/2
+	PUT http://localhost:5000/vendors/1
+		{"name":"bytexl","ratings":5,"place":"hyderabad","phone_number":"112233"}
+	GET http://localhost:5000/vendors/1
+	GET http://localhost:5000/vendors
+	POST http://localhost:5000/vendors 
+		{"name":"mahesh","ratings":1,"place":"gnt","phone_number":"9988998899"}
+	GET http://localhost:5000/vendors
+	GET http://localhost:5000/vendors/3
+	DELETE http://localhost:5000/vendors/3
+	GET http://localhost:5000/vendors
+	GET http://localhost:5000/vendors/3

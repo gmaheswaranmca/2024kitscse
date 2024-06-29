@@ -1,0 +1,18 @@
+<div>
+    <h3>Square Calculator</h3>
+    <div>
+        <label for="num">Number</label>
+        <input type="text" id="num"
+            [(ngModel)]="num"
+        >
+    </div>
+    <div>
+        <label for="res">Square</label>
+        <input type="text" id="res"
+            [value]="res"
+        >
+    </div>
+    The squar of {{ num }} is {{ res }}
+    <button (click)="this.findSquare()">Find Square</button>
+
+</div>

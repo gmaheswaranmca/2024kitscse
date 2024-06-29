@@ -1,0 +1,20 @@
+<h3>Create Vendor</h3>
+<div>
+    <div>
+        <label for="name">name</label>
+        <input type="text" id="name" [(ngModel)]="vendor.name"/>
+    </div>
+    <div>
+        <label for="ratings">ratings</label>
+        <input type="text" id="ratings" [(ngModel)]="vendor.ratings"/>
+    </div>
+    <div>
+        <label for="place">place</label>
+        <input type="text" id="place" [(ngModel)]="vendor.place"/>
+    </div>
+    <div>
+        <label for="phone_number">phone_number</label>
+        <input type="text" id="phone_number" [(ngModel)]="vendor.phone_number"/>
+    </div>
+    <button (click)="this.doCreate()">Create Vendor</button>
+</div>

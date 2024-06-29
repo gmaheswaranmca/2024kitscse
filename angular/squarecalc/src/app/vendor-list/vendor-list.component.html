@@ -1,0 +1,23 @@
+<h3>Vendor List</h3>
+<a href="/vendors/create">New Vendor</a>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>ratings</th>
+        <th>place</th>
+        <th>phone number</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let vendor of vendors;let idx=index;">
+        <td>{{vendor.id}}</td>
+        <td>{{vendor.name}}</td>
+        <td>{{vendor.ratings}}</td>
+        <td>{{vendor.place}}</td>
+        <td>{{vendor.phone_number}}</td>
+        <td>
+            <a href="/vendors/edit/{{vendor.id}}">edit</a>&nbsp;
+            <button (click)="this.doDelete(vendor.id)">delete</button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,32 @@
+API End Points
+    requst method + url 
+    verb            noun 
+
+vendors resource + operations + API End Points 
+create          POST    /vendors
+read all        GET     /vendors
+read by id      GET     /vendors/:id 
+update          PUT     /vendors/:id
+delete          DELETE  /vendors/:id
+
+flask - API - routes for vendors resource 
+1. create          POST    /vendors
+@app.route("/vendors",methods=["POST"])
+def vendors_create()
+2.read all        GET     /vendors
+@app.route("/vendors",methods=["GET"])
+def vendors_read_all()
+3.read by id      GET     /vendors/:id 
+@app.route("/vendors/<id>",methods=["GET"])
+def vendors_read_byid(id)
+4.update          PUT     /vendors/:id
+@app.route("/vendors/<id>",methods=["PUT"])
+def vendors_update(id)
+5.delete          DELETE  /vendors/:id
+@app.route("/vendors/<id>",methods=["DELETE"])
+def vendors_delete(id)
+ 
+
+API Clients for testing the API End Points:
+1. POSTMAN 
+2. thunder client in VSC extension 

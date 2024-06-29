@@ -1,5 +1,16 @@
 https://www.hackerrank.com/contests/fundamentals-of-programming/challenges
 
+Solve:
+Decision Making - Electricity Bill (Page 2 - Q 10)
+Operators - Reverse a 3-digit number (Page 2 - Q7)
+Decision Making - Trendy number (Page 3 - Q4)
+Decision Making - Number of Days (Page 3 - Q6)
+Control Statements - Print Prime Numbers in a range (Page 4 - Q1)
+Control Statements - Sum of digit till single digit (Page 4 - Q10)
+
+
+
+
 
 1. app dev
     microservices app dev using frameworks 
